@@ -1,6 +1,6 @@
 #INTERFACE      SOURCE          ADDRESS         PROTO   PORT(S) IPSEC   MARK
 #vmbr0           10.0.0.0/8
-+vmbr0           10.20.20.20   185.42.222.136
-vmbr0            10.0.0.0/8    185.42.222.135
+#+vmbr0           10.20.20.20   yy.yy.yy.yy
+#vmbr0            10.0.0.0/8    xx.xx.xx.xx
 
 # LAST LINE -- DO NOT REMOVE
