@@ -1,0 +1,21 @@
+#SOURCE DEST    POLICY          LOG     LIMIT:          CONNLIMIT:
+#                               LEVEL   BURST           MASK
+
+# From Firewall Policy
+fw      fw      ACCEPT
+fw      net     ACCEPT
+fw      dmz     ACCEPT
+
+# From DMZ Policy
+
+dmz     dmz     ACCEPT
+dmz     net     ACCEPT
+dmz     fw      DROP            info
+
+# From Net Policy
+net     fw      DROP            info
+net     dmz     DROP            info 
+
+# THE FOLLOWING POLICY MUST BE LAST
+#
+all     all     REJECT          info

@@ -1,0 +1,4 @@
+#ZONE   INTERFACE       BROADCAST       OPTIONS
+net     vmbr0           detect          blacklist,nosmurfs
+dmz     venet0          detect          routeback
+dmz     vmbr1           detect          routeback,bridge

@@ -1,0 +1,17 @@
+#ACTION          SOURCE     DEST       PROTO   DEST        SOURCE     ORIGINAL    RATE
+
+# Permit access to SSH
+ACCEPT       net        $FW:185.42.222.135         tcp       2222            -          -          6/min:5
+
+
+# Permit access to Proxmox Manager and Console
+ACCEPT           net        $FW:185.42.222.135         tcp     8006,3128
+
+# PING Rules
+Ping/ACCEPT      all        all
+
+# System Specific Rules
+DNAT                    all     dmz:10.20.20.20     tcp     80,443   -    185.42.222.136
+DNAT                    net     dmz:10.10.10.10:1195     udp     1195   -    185.42.222.135
+
+# LAST LINE -- DO NOT REMOVE
